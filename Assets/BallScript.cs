@@ -55,14 +55,14 @@ public class BallScript : MonoBehaviour
             {
                 playerLeftScored = false;
                 rb = ball.GetComponent<Rigidbody>();
-                rb.velocity = Vector3.right * thrust;
+                rb.velocity = new Vector3(1, (float)-0.5, 0) * thrust;
                 _reset = false;
             }
             else if (Input.GetKeyDown(KeyCode.Space) && playerRightScored)
             {
                 playerRightScored = false;
                 rb = ball.GetComponent<Rigidbody>();
-                rb.velocity = Vector3.left * thrust;
+                rb.velocity = new Vector3(-1, (float)0.5, 0) * thrust;
                 _reset = false;
             }
         }

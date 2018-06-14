@@ -3780,7 +3780,7 @@ Transform:
   m_GameObject: {fileID: 344990746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9, y: 0, z: 0}
-  m_LocalScale: {x: 0.21745849, y: 2.0826936, z: 1}
+  m_LocalScale: {x: 0.21745849, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -11142,7 +11142,7 @@ MonoBehaviour:
   playerRightScored: 0
   playerLeftScore: 0
   playerRightScore: 0
-  thrust: 15
+  thrust: 12
 --- !u!54 &1438015706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11658,7 +11658,7 @@ Transform:
   m_GameObject: {fileID: 1827419948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 0.21745849, y: 2.0826936, z: 1}
+  m_LocalScale: {x: 0.21745849, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

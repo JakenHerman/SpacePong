@@ -25,13 +25,18 @@ public class EnemyScript : MonoBehaviour
         if (ballInSight)
         {
 
-            if (col.transform.position.y > enemyPaddle.transform.position.y)
+            if (col.transform.position.y > enemyPaddle.transform.position.y + 1)
             {
                 Move(Vector3.up);
             }
-            else if (col.transform.position.y < enemyPaddle.transform.position.y)
+
+            else if (col.transform.position.y < enemyPaddle.transform.position.y - 1)
             {
                 Move(Vector3.down);
+            }
+            else
+            {
+                Sleep();
             }
         }
         else
@@ -73,7 +78,8 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        ballInSight = false;
+        if (col.GetComponent<Collider>().name == "Ball")
+            ballInSight = false;
     }
 
 }
