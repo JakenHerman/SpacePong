@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public GameObject enemyPaddle;
+
     public Rigidbody rb;
+    public bool ballInSight;
+    public Collider col;
 
     // Use this for initialization
     void Start()
@@ -13,18 +16,23 @@ public class EnemyScript : MonoBehaviour
         Renderer rend = enemyPaddle.gameObject.GetComponent<Renderer>();
         rend.material.color = Color.green;
         rb = enemyPaddle.GetComponent<Rigidbody>();
+        ballInSight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (ballInSight)
         {
-            Move(Vector3.up);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Move(Vector3.down);
+
+            if (col.transform.position.y > enemyPaddle.transform.position.y)
+            {
+                Move(Vector3.up);
+            }
+            else if (col.transform.position.y < enemyPaddle.transform.position.y)
+            {
+                Move(Vector3.down);
+            }
         }
         else
         {
@@ -40,6 +48,32 @@ public class EnemyScript : MonoBehaviour
     void Sleep()
     {
         rb.Sleep();
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.GetComponent<Collider>().name == "Ball")
+        {
+            ballInSight = true;
+            this.col = col;
+            if (col.transform.position.y > enemyPaddle.transform.position.y)
+            {
+                Move(Vector3.up);
+            }
+            else if (col.transform.position.y < enemyPaddle.transform.position.y)
+            {
+                Move(Vector3.down);
+            }
+            else
+            {
+                Sleep();
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        ballInSight = false;
     }
 
 }

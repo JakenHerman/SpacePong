@@ -11,11 +11,13 @@ public class BallScript : MonoBehaviour
 {
     public GameObject ball;
     public Rigidbody rb;
+
+    public GameObject RightPaddle;
+
     public bool _reset;
 
     public Text playerLeftScoreText;
     public Text playerRightScoreText;
-    public Text StartPrompt;
 
     public bool playerLeftScored;
     public bool playerRightScored;
@@ -55,7 +57,6 @@ public class BallScript : MonoBehaviour
                 rb = ball.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.right * thrust;
                 _reset = false;
-                StartPrompt.text = String.Empty;
             }
             else if (Input.GetKeyDown(KeyCode.Space) && playerRightScored)
             {
@@ -63,7 +64,6 @@ public class BallScript : MonoBehaviour
                 rb = ball.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.left * thrust;
                 _reset = false;
-                StartPrompt.text = String.Empty;
             }
         }
         else
@@ -89,6 +89,9 @@ public class BallScript : MonoBehaviour
     {
         ball.transform.position = Vector3.zero;
         rb.velocity = Vector3.zero;
+        RightPaddle.transform.position = new Vector3(9, 0, 0);
+        Rigidbody re = RightPaddle.gameObject.GetComponent<Rigidbody>();
+        re.velocity = Vector3.zero;
         _reset = true;
     }
 }

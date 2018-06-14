@@ -279,7 +279,7 @@ Transform:
   m_LocalScale: {x: 20, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &269376127
 MonoBehaviour:
@@ -7364,10 +7364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
   rb: {fileID: 0}
+  RightPaddle: {fileID: 0}
   _reset: 0
   playerLeftScoreText: {fileID: 598201673}
   playerRightScoreText: {fileID: 1879942973}
-  StartPrompt: {fileID: 0}
   playerLeftScored: 0
   playerRightScored: 0
   playerLeftScore: 0
@@ -11134,10 +11134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1438015700}
   rb: {fileID: 0}
+  RightPaddle: {fileID: 1827419948}
   _reset: 0
   playerLeftScoreText: {fileID: 598201673}
   playerRightScoreText: {fileID: 1879942973}
-  StartPrompt: {fileID: 0}
   playerLeftScored: 0
   playerRightScored: 0
   playerLeftScore: 0
@@ -11452,7 +11452,7 @@ Transform:
   m_LocalScale: {x: 0.08414841, y: 9.864984, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1651548863
 MonoBehaviour:
@@ -11589,6 +11589,7 @@ GameObject:
   - component: {fileID: 1827419949}
   - component: {fileID: 1827419953}
   - component: {fileID: 1827419954}
+  - component: {fileID: 1827419955}
   m_Layer: 0
   m_Name: RightPaddle
   m_TagString: Paddle
@@ -11690,6 +11691,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPaddle: {fileID: 1827419948}
   rb: {fileID: 0}
+  ballInSight: 0
+  col: {fileID: 0}
+--- !u!135 &1827419955
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1827419948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.86
+  m_Center: {x: -8.4, y: 0, z: 0}
 --- !u!1 &1879942971
 GameObject:
   m_ObjectHideFlags: 0
@@ -11778,10 +11793,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
   rb: {fileID: 0}
+  RightPaddle: {fileID: 0}
   _reset: 0
   playerLeftScoreText: {fileID: 598201673}
   playerRightScoreText: {fileID: 1879942973}
-  StartPrompt: {fileID: 0}
   playerLeftScored: 0
   playerRightScored: 0
   playerLeftScore: 0
