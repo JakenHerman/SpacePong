@@ -9,6 +9,9 @@ public class EnvironmentScript : MonoBehaviour {
     public GameObject Bottom;
     public GameObject Right;
 
+    public int playerLeftScore = 0;
+    public int playerRightScore = 0;
+
     // Use this for initialization
     void Start () {
         Renderer left_rend = Left.gameObject.GetComponent<Renderer>();
@@ -28,5 +31,6 @@ public class EnvironmentScript : MonoBehaviour {
 	void Update () {
         //check if ball colliding with left or right walls to 
         //calculate score
+
 	}
 }

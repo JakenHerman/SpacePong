@@ -223,7 +223,9 @@
     <Compile Include="Assets\BallScript.cs" />
     <Compile Include="Assets\EnemyScript.cs" />
     <Compile Include="Assets\EnvironmentScript.cs" />
+    <Compile Include="Assets\LeftWallScript.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\RightWallScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
